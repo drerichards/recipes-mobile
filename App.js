@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { enableScreens } from 'react-native-screens'
 import * as Font from 'expo-font'
 import AppNavigator from './navigation/AppNavigator'
 import { AppLoading } from 'expo'
+
+enableScreens()
 
 const fetchFonts = () => {
   Font.loadAsync({
