@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import * as Font from 'expo-font'
-import { AppLoading } from "expo"
+import AppNavigator from './navigation/AppNavigator'
+import { AppLoading } from 'expo'
 
 const fetchFonts = () => {
   Font.loadAsync({
@@ -21,18 +22,5 @@ export default function App() {
       />
     )
   }
-
-  return (
-    <View style={styles.screen}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  )
+  return <AppNavigator />
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
