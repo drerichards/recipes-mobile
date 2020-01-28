@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native'
-
+import { View, Text, StyleSheet, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native'
 
 const GridTile = props => {
   let TouchableComp = TouchableOpacity
