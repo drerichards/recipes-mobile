@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native'
-import Colors from '../constants/Colors'
 
 const MealItem = ({ data, onSelectMeal }) => {
   return (

@@ -2,12 +2,17 @@ import React from 'react'
 import { View, Text, StyleSheet, Button, FlatList } from 'react-native'
 import { CATEGORIES, MEALS } from '../data/dummy-data'
 import MealItem from '../components/MealItem'
-import Colors from '../constants/Colors'
 
 const CategoryMealScreen = props => {
   const renderMealItem = itemData => {
     return <MealItem data={itemData.item}
-      onSelectMeal={() => { }}
+      onSelectMeal={() => {
+        props.navigation.navigate({
+          routeName: 'MealDetail', params: {
+            mealId: itemData.item.id
+          }
+        })
+      }}
     />
   }
   const catID = props.navigation.getParam('id')
