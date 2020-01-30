@@ -25,16 +25,16 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: Platform.OS === 'android' && Platform.Version >= 21 ? 'hidden' : 'visible',
+    elevation: 5
   },
   gridItem: {
     flex: 1,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOpacity: .26,
+    shadowOpacity: .46,
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 10,
-    elevation: 3,
+    shadowRadius: 2,
     borderColor: '#ddd',
     borderWidth: .5,
     padding: 15,
