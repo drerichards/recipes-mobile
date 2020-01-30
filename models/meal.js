@@ -1,4 +1,4 @@
-class Recipe {
+class Meal {
   constructor(
     id,
     categoryID,
@@ -29,4 +29,4 @@ class Recipe {
   }
 }
 
-export default Recipe
+export default Meal
