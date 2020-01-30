@@ -5,16 +5,16 @@ import { CATEGORIES, MEALS } from '../data/dummy-data'
 
 const CategoryMealScreen = props => {
   const renderMealItem = itemData => {
+    console.log(itemData)
     return (
       <View>
         <Text>{itemData.item.title}</Text>
       </View>
     )
   }
-
   const catID = props.navigation.getParam('id')
   const displayedMeals = MEALS.filter(
-    meal => meal.id.indexOf(catID) >= 0
+    meal => meal.categoryID.indexOf(catID) >= 0
   )
 
   return (
