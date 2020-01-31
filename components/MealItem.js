@@ -14,9 +14,9 @@ const MealItem = ({ data, onSelectMeal }) => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-            <Text>{data.duration}mins</Text>
-            <Text>{data.complexity.toUpperCase()}</Text>
-            <Text>{data.affordability.toUpperCase()}</Text>
+            <Text style={styles.text, { textTransform: 'lowercase' }}>{data.duration} mins</Text>
+            <Text style={styles.text}>{data.complexity}</Text>
+            <Text style={styles.text}>{data.affordability}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -56,6 +56,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#fff',
     textAlign: 'center'
+  },
+  text: {
+    fontFamily: 'openSans',
+    textTransform: 'capitalize'
   },
   bgImage: {
     width: '100%',

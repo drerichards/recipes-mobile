@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform } from 'react-native'
+import { Platform, Text } from 'react-native'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
@@ -38,14 +38,18 @@ const tabConfig = {
     screen: AppNavigator,
     navigationOptions: {
       tabBarIcon: tabInfo => <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor} />
-    }, tabBarColor: Colors.yellow
+    },
+    tabBarColor: Colors.yellow,
+    tabBarLabel: Platform.OS === 'android' ? <Text style={{ fontFamily: 'openSans' }}>Meals</Text> : 'Meals'
   },
   Favorites: {
     screen: FavoritesNavigator,
     navigationOptions: {
       tabBarLabel: 'Favorites!',
       tabBarIcon: tabInfo => <Ionicons name='ios-star' size={25} color={tabInfo.tintColor} />
-    }, tabBarColor: Colors.pink
+    },
+    tabBarColor: Colors.pink,
+    tabBarLabel: Platform.OS === 'android' ? <Text style={{ fontFamily: 'openSans' }}>Favorites</Text> : 'Favorites'
   }
 }
 
@@ -56,7 +60,11 @@ const MealsFavTabNavigator = Platform.OS === 'android' ?
   })
   : createBottomTabNavigator(tabConfig, {
     tabBarOptions: {
-      activeTintColor: Colors.blue
+      labelStyle: {
+        fontFamily: 'openSans',
+      },
+      activeTintColor: Colors.blue,
+      activeBackgroundColor: Colors.yellow
     }
   })
 
