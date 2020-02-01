@@ -20,7 +20,7 @@ const mealsReducers = (state = initialState, action) => {
         return { ...state, favoriteMeals: state.favoriteMeals.concat(meal) }
       }
     case SET_FILTERS:
-      const appliedFilters = action.filteredMeals
+      const appliedFilters = action.filters
       const updatedFilteredMeals = state.meals.filter(meal => {
         if (appliedFilters.glutenFree && !meal.isGlutenFree) {
           return false
